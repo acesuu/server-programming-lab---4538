@@ -10,7 +10,17 @@ const getCV = (req, res) => {
     edus.push(educations[key]);
   }
 
-  res.render("cv", { name: "Tasnim Ahmed", educations: edus });
+  experience = fs.readFileSync("data/experience", { encoding: "utf-8" });
+
+  experience = JSON.parse(String(experience));
+
+  experiences = [];
+
+  for (let key in experience) {
+    experiences.push(experience[key]);
+  }
+
+  res.render("cv", { name: "Md. Ahnaf Akib", educations: edus, experience: experiences});
 };
 
 module.exports = { getCV: getCV };

@@ -1,0 +1,20 @@
+{
+  "1": {
+    "designation": "BackEnd Developer",
+    "company": "Battery low",
+    "start": "March 2018",
+    "end": "July 2019"
+  },
+  "2": {
+    "designation": "Database Engineer",
+    "company": "Transcom",
+    "start": "December 2019",
+    "end": "November 2021"
+  },
+  "3": {
+    "designation": "BackEnd Developer",
+    "company": "Brainstation23",
+    "start": "February 2022 ",
+    "end": "Current"
+  }
+}
