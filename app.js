@@ -18,6 +18,14 @@ response to any HTTP method.
 // app.get("/", function (req, res) {
 //   res.send("Hello World!");
 // });
+
+var bodyParser = require("body-parser");
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.set("view engine", "ejs"); // Setting EJS as template engine

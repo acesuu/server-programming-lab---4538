@@ -40,7 +40,21 @@ const getCV = (req, res) => {
     skills.push(skill[key]);
   }
 
-  res.render("cv", { name: "Md. Ahnaf Akib", educations: edus, experience: experiences, language: languages, skill:skills});
+  var name = req.body.name;
+  var email = req.body.email;
+  var profession = req.body.profession;
+  var location = req.body.location;
+  var phone = req.body.phone;
+
+  if (name === null || email == null || profession == null || location == null || phone == null) {
+    name = "Md. Ahnaf Akib",
+    email="ahnaf@gmail.com",
+    profession="Devops",
+    location="Dhaka",
+    phone="01849665655";
+  }
+
+  res.render("cv", { name: name, email: email, profession: profession, location: location, phone: phone,  educations: edus, experience: experiences, language: languages, skill:skills});
 };
 
 module.exports = { getCV: getCV };
