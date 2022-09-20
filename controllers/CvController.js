@@ -20,7 +20,17 @@ const getCV = (req, res) => {
     experiences.push(experience[key]);
   }
 
-  res.render("cv", { name: "Md. Ahnaf Akib", educations: edus, experience: experiences});
+  language = fs.readFileSync("data/language", { encoding: "utf-8" });
+
+  language = JSON.parse(String(language));
+
+  languages = [];
+
+  for (let key in language) {
+    languages.push(language[key]);
+  }
+
+  res.render("cv", { name: "Md. Ahnaf Akib", educations: edus, experience: experiences, language: languages,});
 };
 
 module.exports = { getCV: getCV };
